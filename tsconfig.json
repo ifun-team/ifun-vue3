@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "rootDir":".",
+        "paths":{
+            "@ifun-vue3/hooks":["./packages/hooks/index.ts"],
+            "@ifun-vue3/hooks/*":["./packages/hooks/*"]
+        },
+        "moduleResolution": "Bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "composite": true,
+        "incremental": true,
+        "strict": true,
+        "skipLibCheck": true,        
+    },
+    "include":[
+        "*.ts",
+        "packages"
+    ],
+    "exclude":[
+        "node_modules",
+        "**/dist"
+    ]
+}

@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# 
+packages/**/*.js
+packages/**/*.[cm]js
+packages/**/*.d.ts
+packages/**/*.d.[cm]ts
+
+types

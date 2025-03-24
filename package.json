@@ -1,0 +1,38 @@
+{
+  "name": "@ifun-vue3/monorepo",
+  "version": "0.1.0",
+  "description": "The vue3 toolkit about hooks and components. and more.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "build:types": "vue-tsc --emitDeclarationOnly",
+    "lint": "eslint --cache",
+    "typecheck": "vue-tsc --noEmit",
+    "publish": "tsx scripts/publish.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hboot <bobolity@163.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "@rollup/plugin-json": "catalog:",
+    "@types/node": "catalog:",
+    "axios": "catalog:",
+    "eslint": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "rollup": "catalog:",
+    "rollup-plugin-dts": "catalog:",
+    "rollup-plugin-esbuild": "catalog:",
+    "rollup-plugin-pure": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitepress": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}
