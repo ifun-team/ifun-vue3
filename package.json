@@ -4,12 +4,13 @@
   "description": "The vue3 toolkit about hooks and components. and more.",
   "main": "index.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "pnpm -r run build",
     "build:types": "vue-tsc --emitDeclarationOnly",
     "lint": "eslint --cache",
     "typecheck": "vue-tsc --noEmit",
-    "release": "bumpp --execute=\"npm run release:prepare\" --all",
+    "release": "bumpp --execute=\"npm run release:prepare\" --all ",
     "release:prepare": "npm run build:types",
     "publish": "tsx scripts/publish.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
