@@ -4,14 +4,24 @@ import { ref } from "vue";
 export type Status = "finish" | "stop" | "loading" | "error" | "connecting";
 // 匹配换行符
 const Regex_Match_Line = /\r\n|\n|\r/gm;
-export const useFetchStream = (url: string, options?: Omit<Request, "url">) => {
+export const useFetchStream = (
+  url: string,
+  options?: Omit<Request, "url"> & { timeout: number }
+) => {
   const decoder = new TextDecoder();
-  let status = ref<Status>("finish");
-  let error = ref<Response | null>(null);
+  const status = ref<Status>("finish");
+  const error = ref<Response | null>(null);
+  //
+  const abortController = new AbortController();
+  // 超时停止
+  const timeoutSignal = AbortSignal.timeout(options?.timeout || 0);
 
-  async function* readlines() {
+  async function* readline() {
     status.value = "connecting";
-    const res = await fetch(url, options);
+    const res = await fetch(url, {
+      ...options,
+      signal: AbortSignal.any([abortController.signal, timeoutSignal]),
+    });
 
     // 请求状态，连接错误、网络错误
     if (res.ok) {
@@ -34,6 +44,10 @@ export const useFetchStream = (url: string, options?: Omit<Request, "url">) => {
     let buffer = value ? decoder.decode(value) : "";
     let startIndex = 0;
     for (;;) {
+      if (["finish", "stop"].includes(status.value)) {
+        // 读取完成、暂停
+        return;
+      }
       let line = Regex_Match_Line.exec(buffer);
       if (line) {
         // 匹配成功，存在换行内容
@@ -61,8 +75,13 @@ export const useFetchStream = (url: string, options?: Omit<Request, "url">) => {
   }
 
   return {
-    readlines,
+    readline,
     status,
     error,
+    stop() {
+      // 停止读取
+      abortController.abort();
+      status.value = "stop";
+    },
   };
 };
