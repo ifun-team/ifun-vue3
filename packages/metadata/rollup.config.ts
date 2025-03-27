@@ -17,37 +17,8 @@ const rollupConfig: RollupOptions[] = [
     input: "index.ts",
     output: [
       {
-        file: "index.cjs",
-        format: "cjs",
-      },
-      {
         file: "index.mjs",
         format: "esm",
-      },
-      {
-        file: "index.iife.js",
-        format: "iife",
-        name: "VueHooks",
-        extend: true,
-        globals: {
-          vue: "Vue",
-        },
-        plugins: [],
-      },
-      {
-        file: "index.iffe.min.js",
-        format: "iife",
-        name: "VueHooks",
-        extend: true,
-        globals: {
-          vue: "Vue",
-        },
-        plugins: [
-          {
-            name: "esbuild-minifier",
-            renderChunk: esbuild({ minify: true }).renderChunk,
-          },
-        ],
       },
     ],
     plugins: [pluginEsbuild, json, pluginPure],
@@ -57,13 +28,7 @@ const rollupConfig: RollupOptions[] = [
     input: "index.ts",
     output: [
       {
-        file: "index.d.ts",
-      },
-      {
         file: "index.d.mts",
-      },
-      {
-        file: "index.d.cts",
       },
     ],
     plugins: [pluginDts],

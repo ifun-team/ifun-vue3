@@ -7,6 +7,7 @@
 
 - Support vue3.
 - Strong Type.
+- Easy to use.
 
 # 🦄 Usage
 

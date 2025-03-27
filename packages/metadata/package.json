@@ -1,12 +1,13 @@
 {
-  "name": "@ifun-vue3/hooks",
+  "name": "@ifun-vue3/metadata",
   "version": "0.1.1",
-  "description": "The vue3 common hooks.",
-  "main": "index.cjs",
+  "description": "Metadata for vue3 hooks.",
+  "main": "index.mjs",
   "module": "index.mjs",
-  "types": "index.d.ts",
+  "types": "index.d.mts",
   "scripts": {
     "build": "rollup --config=rollup.config.ts --configPlugin=rollup-plugin-esbuild",
+    "prepack": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,31 +17,21 @@
     "ifun-vue3"
   ],
   "files": [
-    "*.cjs",
+    "index.json",
     "*.mjs",
     "*.js",
-    "*.d.ts",
-    "*.d.cts",
     "*.d.mts"
   ],
   "author": "hboot <bobolity@163.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
+  "sideEffects": "false",
   "repository": {
     "type": "git",
     "url": "https://github.com/hboot/ifun-vue3.git",
-    "directory": "packages/hooks"
+    "directory": "packages/metadata"
   },
   "bugs": {
     "url": "https://github.com/hboot/ifun-vue3/issues"
-  },
-  "devDependencies": {
-    "@rollup/plugin-json": "catalog:",
-    "axios": "catalog:",
-    "rollup": "catalog:",
-    "rollup-plugin-dts": "catalog:",
-    "rollup-plugin-esbuild": "catalog:",
-    "rollup-plugin-pure": "catalog:",
-    "vue": "catalog:"
   }
 }

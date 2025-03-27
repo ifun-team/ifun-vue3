@@ -10,8 +10,9 @@
     "build:types": "vue-tsc --emitDeclarationOnly",
     "lint": "eslint --cache",
     "typecheck": "vue-tsc --noEmit",
+    "update": "tsx scripts/update.ts",
     "release": "bumpp --execute=\"npm run release:prepare\" --all ",
-    "release:prepare": "npm run build:types",
+    "release:prepare": "npm run build:types && tsx scripts/update.ts",
     "publish": "tsx scripts/publish.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +21,8 @@
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
   "devDependencies": {
+    "@ifun-vue3/metadata": "workspace:*",
+    "@ifun-vue3/hooks": "workspace:*",
     "@rollup/plugin-json": "catalog:",
     "@types/node": "catalog:",
     "axios": "catalog:",
