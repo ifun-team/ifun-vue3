@@ -30,7 +30,8 @@
     },
     "include":[
         "*.ts",
-        "packages"
+        "packages",
+        "meta"
     ],
     "exclude":[
         "node_modules",

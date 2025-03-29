@@ -136,3 +136,6 @@ packages/**/*.d.ts
 packages/**/*.d.[cm]ts
 
 types
+
+.DS_Store
+index.json
