@@ -9,7 +9,7 @@ import { existsSync } from "node:fs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 export const PKG_DIR = resolve(__dirname, "..");
-export const ROOT_DIR = resolve(PKG_DIR, "../../..");
+export const ROOT_DIR = resolve(PKG_DIR, "../..");
 
 const git = Git(ROOT_DIR);
 
@@ -31,6 +31,9 @@ async function readMetadata() {
   };
 
   for (const info of packages) {
+    if (info.utils) {
+      continue;
+    }
     const dir = join(ROOT_DIR, "packages", info.name);
 
     const functions = await listFunctions(dir);

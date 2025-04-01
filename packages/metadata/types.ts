@@ -3,6 +3,12 @@ export interface PackageManifest {
   display: string;
   description?: string;
   author?: string;
+  utils?: boolean;
+  iife?: boolean;
+  mjs?: boolean;
+  dts?: boolean;
+  target?: string;
+  globals?: Record<string, string>;
 }
 
 export interface HooksFunction {
