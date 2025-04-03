@@ -64,7 +64,7 @@ export const useFetchStream = (
       }
       ({ value: value, done: done } = await render.read());
       buffer =
-        buffer.substring(startIndex) + value ? decoder.decode(value) : "";
+        buffer.substring(startIndex) + (value ? decoder.decode(value) : "");
       startIndex = Regex_Match_Line.lastIndex = 0;
     }
 
