@@ -29,10 +29,10 @@
   "sideEffects": "false",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hboot/ifun-vue3.git",
+    "url": "https://github.com/ifun-team/ifun-vue3",
     "directory": "packages/metadata"
   },
   "bugs": {
-    "url": "https://github.com/hboot/ifun-vue3/issues"
+    "url": "https://github.com/ifun-team/ifun-vue3/issues"
   }
 }
