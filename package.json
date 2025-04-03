@@ -1,6 +1,6 @@
 {
   "name": "@ifun-vue3/monorepo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The vue3 toolkit about hooks and components. and more.",
   "main": "index.js",
   "type": "module",
