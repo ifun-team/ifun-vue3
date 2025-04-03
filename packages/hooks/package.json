@@ -1,6 +1,6 @@
 {
   "name": "@ifun-vue3/hooks",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "description": "The vue3 common hooks.",
   "main": "index.cjs",
   "module": "index.mjs",

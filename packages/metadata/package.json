@@ -1,6 +1,6 @@
 {
   "name": "@ifun-vue3/metadata",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "description": "Metadata for vue3 hooks.",
   "main": "index.mjs",
   "module": "index.mjs",
