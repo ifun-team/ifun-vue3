@@ -3,13 +3,13 @@
     Collection of vue3 components and hooks.
 </p>
 
-# 🚀 Features
+## 🚀 Features
 
 - Support vue3.
 - Strong Type.
 - Easy to use.
 
-# 🦄 Usage
+## 🦄 Usage
 
 Install.
 
